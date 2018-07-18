@@ -1,0 +1,17 @@
+Input file : input.txt
+
+Context 1: Search keyword 
+       Keyword: one
+Line 1, Col 0
+Line 2, Col 10
+Line 3, Col 6
+Total appeared : 3
+
+Context 2: Replace by new keyword 
+         Keyword : one
+         New Keyword : 1
+Line 1, Col 0
+Line 2, Col 10
+Line 3, Col 6
+Total appeared : 3
+Replace "one" by "1" successfuly
