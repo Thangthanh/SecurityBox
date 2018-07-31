@@ -29,10 +29,7 @@ int Model::SQL_login(sqlite3 *db, char *username, char *password) {
 		}
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 	return id;
 }
 void Model::SQL_Reg(sqlite3 *db, char *username, char *password,char *gender, char *birthday, char *fullname,char *address) {
@@ -48,10 +45,7 @@ void Model::SQL_Reg(sqlite3 *db, char *username, char *password,char *gender, ch
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 void Model::SQL_Mess_receive(sqlite3 *db, int zID) {
 	if (!db)return;
@@ -67,10 +61,7 @@ void Model::SQL_Mess_receive(sqlite3 *db, int zID) {
 		for (list<std::string>::const_iterator it = answer.begin(); it != answer.end(); it++)
 			cout <<"-"<< *it << endl;
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 void Model::SQL_Mess_send(sqlite3 *db, int zID) {
 	if (!db)return;
@@ -86,10 +77,7 @@ void Model::SQL_Mess_send(sqlite3 *db, int zID) {
 		for (list<std::string>::const_iterator it = answer.begin(); it != answer.end(); it++)
 			cout <<"-"<< *it << endl;
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 int Model::Seach_fr(char *frien) {
 	int id2 = -1;
@@ -104,10 +92,7 @@ int Model::Seach_fr(char *frien) {
 		}
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 	return id2;
 }
 void Model::ShowMessDetail(sqlite3 *db, int id1, int id2) {
@@ -131,10 +116,7 @@ void Model::ShowMessDetail(sqlite3 *db, int id1, int id2) {
 		}
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 bool Model::CheckFriend(sqlite3 *db, int id1, int id2) {
 	int isFriend = 0;
@@ -156,10 +138,7 @@ bool Model::CheckFriend(sqlite3 *db, int id1, int id2) {
 			sqlite3_finalize(stmt);
 		}
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 	return isFriend;
 }
 bool Model::CheckBlock(sqlite3 *db, int id1, int id2) {
@@ -179,10 +158,7 @@ bool Model::CheckBlock(sqlite3 *db, int id1, int id2) {
 		}
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 	return isblock;
 }
 void Model::WriteToFriend(sqlite3 *db, int id1, int id2) {
@@ -202,10 +178,7 @@ void Model::WriteToFriend(sqlite3 *db, int id1, int id2) {
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 void Model::ShowFriend(sqlite3 *db, int id1) {
 	cout << "-------List Friends-----------\n";
@@ -228,10 +201,7 @@ void Model::ShowFriend(sqlite3 *db, int id1) {
 		sqlite3_finalize(stmt);
 		cout << "-------------------------------------\n";
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 int Model::ShowaaFriend(sqlite3 *db, int id1,int n) {
 	int id = 0;
@@ -257,10 +227,7 @@ int Model::ShowaaFriend(sqlite3 *db, int id1,int n) {
 		sqlite3_finalize(stmt);
 		cout << "-------------------------------------\n";
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 	return id;
 }
 void Model::BlockFriend(sqlite3 *db, int id1, int id2) {
@@ -275,10 +242,7 @@ void Model::BlockFriend(sqlite3 *db, int id1, int id2) {
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 void Model::WriteToMess(sqlite3 *db, int id1, int id2, char *mes, char *tim,int tt,int sec) {
 	szSQL = "INSERT INTO message VALUES (?,?,?,?,?,?)";
@@ -295,10 +259,7 @@ void Model::WriteToMess(sqlite3 *db, int id1, int id2, char *mes, char *tim,int 
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 void Model::update_tt(sqlite3 *db, int id1, int id2) {
 	if (!db)return;
@@ -312,10 +273,7 @@ void Model::update_tt(sqlite3 *db, int id1, int id2) {
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 int Model::Select_all(sqlite3 *db,char *us) {
 	int id = 0;
@@ -332,10 +290,7 @@ int Model::Select_all(sqlite3 *db,char *us) {
 			sqlite3_finalize(stmt);
 		}
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 	return id;
 }
 int Model::Select_mask(sqlite3 *db) {
@@ -350,10 +305,7 @@ int Model::Select_mask(sqlite3 *db) {
 			sqlite3_finalize(stmt);
 		}
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 	return id;
 }
 void Model::Insert_maskuser(sqlite3 *db, int id1,char *na,char *se,char *add) {
@@ -371,10 +323,7 @@ void Model::Insert_maskuser(sqlite3 *db, int id1,char *na,char *se,char *add) {
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 void Model::Update_fr(sqlite3 *db,char *fullname,char *gender,char *address,int id) {
 	if (!db)return;
@@ -390,10 +339,7 @@ void Model::Update_fr(sqlite3 *db,char *fullname,char *gender,char *address,int 
 		sqlite3_step(stmt);
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 void Model::Detail_fr(sqlite3 *db,int id2) {
 	if (!db)return;
@@ -415,10 +361,7 @@ void Model::Detail_fr(sqlite3 *db,int id2) {
 		cout << "-------------------------------------\n";
 		sqlite3_finalize(stmt);
 	}
-	/*else {
-		cout << "SQL error: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-	}*/
+	
 }
 
 
